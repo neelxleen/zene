@@ -1,0 +1,2 @@
+class GateEntry < ApplicationRecord
+end

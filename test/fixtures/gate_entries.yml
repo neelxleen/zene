@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_number: MyString
+  entry_time: 2025-02-21 04:30:51
+  exit_time: 2025-02-21 04:30:51
+  camera_snapshot: MyString
+
+two:
+  vehicle_number: MyString
+  entry_time: 2025-02-21 04:30:51
+  exit_time: 2025-02-21 04:30:51
+  camera_snapshot: MyString

@@ -1,0 +1,49 @@
+
+
+<p>
+ 
+<strong>Force ID:</strong>
+  <%= @employee.force_id %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @employee.rank %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Unit/HQ:</strong>
+  <%= @employee.unithq %>
+</p>
+
+<p>
+  <strong>Contact No:</strong>
+  <%= @employee.contact_no %>
+</p>
+
+<p>
+  <strong>vehicle type:</strong>
+  <%= @employee.personal_vehicle_type %>
+</p>
+<p>
+  <strong>vehicle no:</strong>
+  <%= @employee.vehicle_no %>
+</p>
+<p>
+  <strong>Photo:</strong>
+  <% if @employee.photo.present? %>
+    <%= image_tag(@employee.photo) %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> 
+<%= link_to 'Back', employees_path %>
+
+<%= link_to t('Delete'), @employee, method: :delete, data: { "turbo-method": :delete  }%>

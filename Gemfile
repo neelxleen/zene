@@ -1,5 +1,10 @@
 source "https://rubygems.org"
-
+# Gemfile
+gem 'devise'
+gem 'simple_form'
+gem "active_storage_validations"
+gem "ruby-vips"
+gem "image_processing"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]

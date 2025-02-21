@@ -1,0 +1,13 @@
+<%= simple_form_for @employee do |f| %>
+  <%= f.input :force_id %>
+  <%= f.input :rank, collection: ['CT', 'HC', 'ASI', 'SI', 'INSP'] %>
+  <%= f.input :name %>
+  <%= f.input :unithq %>
+  <%= f.input :contact_no %>
+<%= f.input :personal_vehicle_type, label: "Personal Vehicle Type", collection: ['2 wheeler', '4 wheeler', 'Other', 'Not applicable for pedestrian'], prompt: "Select Vehicle Type" %>
+<%= f.input :vehicle_no %>
+<%= f.input :purpose_of_visit, collection: ['Shopping', 'Hospital', 'Government Duty', 'Night Out Pass', 'Other'], prompt: "Select Purpose" %>
+  <%= f.input :photo %>
+
+  <%= f.button :submit %>
+<% end %>
