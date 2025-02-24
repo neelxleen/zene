@@ -6,9 +6,9 @@
       <th>Force ID</th>
       <th>Rank</th>
       <th>Name</th>
-      <th>Department</th>
+      <th>Vehicle Type</th>
       <th>Contact No</th>
-      <th>Designation</th>
+      <th>Vehicle No.</th>
       <th>Photo</th>
       <th colspan="3"></th>
     </tr>
@@ -20,9 +20,9 @@
         <td><%= employee.force_id %></td>
         <td><%= employee.rank %></td>
         <td><%= employee.name %></td>
-        <td><%= employee.dept %></td>
+        <td><%= employee.personal_vehicle_type %></td>
         <td><%= employee.contact_no %></td>
-        <td><%= employee.designation %></td>
+        <td><%= employee.vehicle_no %></td>
         <td>
         <% if employee.photo.present? %>
     <%= image_tag(employee.photo) %>

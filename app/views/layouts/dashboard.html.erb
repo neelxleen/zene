@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) || "Dashboard" %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_importmap_tags %>
+
+  <%# javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    /* Basic styling - adjust to your preferences */
+    body { font-family: sans-serif; margin: 0; }
+    .dashboard-container { display: flex; height: 100vh; }
+    .sidebar {
+      width: 200px;
+      background-color: #003399; /* Dark blue sidebar background */
+      color: white;
+      padding: 20px;
+    }
+    .main-content { flex: 1; padding: 20px; background-color: #f8f8f8; }
+    .summary-cards { display: flex; gap: 20px; margin-bottom: 20px; }
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .visitor-history { /* Style for the chart area */ }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <div class="sidebar">
+      <%= render 'shared/dashboard_sidebar' %>
+    </div>
+    <div class="main-content">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

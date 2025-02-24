@@ -1,5 +1,28 @@
-<h1>Gate Entry Dashboard</h1>
+<% content_for :title, "Dashboard" %>
+<%# <%=debugger  %>
+<% if signed_in? %> 
+<h2>Welcome back, <%=current_user%></h2>
 
-<p>Total Personnel: <%= link_to(@total_personnel,employees_path) %></p>
-<%= link_to 'Add employee', new_employee_path %>
+<div class="summary-cards">
+  <div class="card">
+    <h3>Total Visitor</h3>
+    <p>___</p>
+  </div>
+  <div class="card">
+    <h3>Checked In Visitor</h3>
+    <p>___</p>
+  </div>
 
+</div>
+
+<div class="visitor-history">
+  <%# Replace this with your actual chart %>
+  <%= image_tag "https://cdn.pixabay.com/photo/2021/12/12/20/00/play-6865967_640.jpg", alt: "Visitor History Chart", style: "width: 100%;" %>
+  <p>Visitor</p>
+  <p>Last 30 Days</p>
+
+</div>
+<% else %>
+     <%= link_to "Sign up", new_user_registration_path,  class: "fa fa-sign-in" %> 
+      <li><%= link_to "Sign in", new_user_session_path, class: "fa fa-sign-in" %></li>
+<% end %>

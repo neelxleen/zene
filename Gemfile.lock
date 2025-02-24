@@ -317,6 +317,8 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
+      ffi (~> 1.12)
+      logger
     ruby-vips (2.2.3)
       ffi (~> 1.12)
       logger
@@ -425,7 +427,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rubocop-rails-omakase
-  ruby-vips
   selenium-webdriver
   simple_form
   solid_cable

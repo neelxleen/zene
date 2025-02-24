@@ -1,0 +1,42 @@
+<%# app/views/visitors/index.html.erb %>
+
+<div class="container mx-auto mt-8">
+  <h1 class="text-2xl font-bold mb-4">Visitors</h1>
+
+  <%= link_to "New Visitor", new_visitor_path, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block" %>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-200 shadow-md">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="py-2 px-4 border-b">Name</th>
+          <th class="py-2 px-4 border-b">Occupation</th>
+          <th class="py-2 px-4 border-b">National ID</th>
+          <th class="py-2 px-4 border-b">Photo</th>
+          <th class="py-2 px-4 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @visitors.each do |visitor| %>
+          <tr class="<%= cycle('bg-white', 'bg-gray-50') %>">
+            <td class="py-2 px-4 border-b"><%= visitor.name %></td>
+            <td class="py-2 px-4 border-b"><%= visitor.occupation %></td>
+            <td class="py-2 px-4 border-b"><%= visitor.national_id %></td>
+            <td class="py-2 px-4 border-b">
+              <% if visitor.photo.attached? %>
+                <%= image_tag visitor.photo, class: "h-12 w-12 object-cover rounded-full shadow-md" %>
+              <% else %>
+                No Photo
+              <% end %>
+            </td>
+            <td class="py-2 px-4 border-b">
+              <%= link_to "Show", visitor_path(visitor), class: "text-blue-500 hover:text-blue-700" %>
+              <%= link_to "Edit", edit_visitor_path(visitor), class: "text-green-500 hover:text-green-700 ml-2" %>
+              <%= link_to "Destroy", visitor_path(visitor), method: :delete, data: { confirm: "Are you sure?" }, class: "text-red-500 hover:text-red-700 ml-2" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

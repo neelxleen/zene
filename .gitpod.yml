@@ -1,0 +1,19 @@
+
+tasks:
+  - init: bin/setup
+    command: bin/rails server
+
+
+
+vscode:
+  extensions:
+    - aliariff.vscode-erb-beautifyd.io/docs/introduction/learn-gitpod/gitpod-yaml)
+# and commit this file to your remote git repository to share the goodness with others.
+
+# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
+
+tasks:
+  - init: bin/setup
+    command: bin/rails server
+
+

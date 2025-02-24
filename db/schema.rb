@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_21_073937) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_24_060907) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,19 +39,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_21_073937) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "force_id"
+  create_table "employees", primary_key: "force_id", id: :string, force: :cascade do |t|
     t.string "rank"
     t.string "name"
-    t.string "dept"
+    t.string "unit_hq"
     t.string "contact_no"
-    t.string "designation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "unithq"
     t.string "personal_vehicle_type"
     t.string "vehicle_no"
     t.string "purpose_of_visit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +61,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_21_073937) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "name"
+    t.string "occupation"
+    t.string "national_id"
+    t.string "contact_no"
+    t.string "personal_vehicle_type"
+    t.string "vehicle_no"
+    t.string "purpose_of_visit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

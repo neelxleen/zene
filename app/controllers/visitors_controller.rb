@@ -7,6 +7,7 @@ class VisitorsController < ApplicationController
     end
   
     def show
+      @visitor = Visitor.find(params[:id])
     end
   
     def new
